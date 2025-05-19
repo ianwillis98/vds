@@ -8,6 +8,7 @@ repository = "https://github.com/ianwillis98/vds"
 keywords = ["identifier", "string", "code", "no_std", "serde"]
 categories = ["text-processing", "no-std", "data-structures"]
 readme = "README.md"
+documentation = "https://docs.rs/vds"
 exclude = ["/.vscode", "/.gitignore", "/.cargo", "/.github"]
 
 [features]
