@@ -1,0 +1,52 @@
+# === Rust / Cargo ===
+target/
+**/*.rs.bk
+Cargo.lock
+
+# Prevent publishing local dev-only files
+.fuzz/
+fuzz/
+*.profraw
+*.profdata
+
+# === Byproducts of rust tooling ===
+*.rlib
+*.rmeta
+*.d
+*.so
+*.dSYM/
+*.crate
+
+# === Editor-specific ===
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs (CLion, IntelliJ, etc.)
+.idea/
+*.iml
+
+# Vim / Neovim
+*.swp
+*.swo
+*.un~
+*~
+
+# Emacs
+*~ 
+\#*\#
+.\#*
+
+# === OS-generated ===
+.DS_Store
+Thumbs.db
+
+# === Test and debug artifacts ===
+*.log
+*.tmp
+*.bak
+*.old
+*.out
+
+# === CLine or other tooling ===
+cline-artifacts/

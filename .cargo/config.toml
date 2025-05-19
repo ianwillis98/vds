@@ -1,0 +1,5 @@
+[alias]
+docs = "doc --features generate,serde --open"
+tests = "test --all-features"
+checks = "check --no-default-features"
+builds = "build --all-features"

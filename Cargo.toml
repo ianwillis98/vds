@@ -1,0 +1,29 @@
+[package]
+name = "vds"
+version = "1.0.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Visibly distinguishable string types for identifiers and codes."
+repository = "https://github.com/ianwillis98/vds"
+keywords = ["identifier", "string", "code", "no_std", "serde"]
+categories = ["text-processing", "no-std", "data-structures"]
+readme = "README.md"
+exclude = ["/.vscode", "/.gitignore", "/.cargo", "/.github"]
+
+[features]
+default = []
+generate = ["rand_core"]
+serde = ["dep:serde"]
+
+[dependencies]
+rand_core = { version = "0.9.3", optional = true }
+serde = { version = "1.0.219", features = ["derive"], optional = true }
+
+[dev-dependencies]
+rand = "0.9.1"
+serde_json = "1"
+proptest = { version = "1", default-features = false, features = ["std"] }
+
+[package.metadata.docs.rs]
+features = ["generate", "serde"]
+rustdoc-args = ["--cfg", "docsrs"]
