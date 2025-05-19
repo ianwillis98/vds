@@ -8,7 +8,6 @@ use crate::vdchar::VDS_ALLOWED;
 /// Error returned when [`VDGenerator::generate`] is called with an invalid configuration.
 ///
 /// This type is only available when the `generate` feature is enabled.
-#[cfg_attr(docsrs, doc(cfg(feature = "generate")))]
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum VDGeneratorError {
     /// The requested output length exceeds the number of unique characters available.
@@ -50,14 +49,12 @@ pub enum VDGeneratorError {
 ///
 /// assert_eq!(result.len(), 8);
 /// ```
-#[cfg_attr(docsrs, doc(cfg(feature = "generate")))]
 pub struct VDGenerator {
     len: usize,
     no_adjacent_repeats: bool,
     no_repeats: bool,
 }
 
-#[cfg_attr(docsrs, doc(cfg(feature = "generate")))]
 impl VDGenerator {
     /// Creates a new generator with default settings.
     ///
