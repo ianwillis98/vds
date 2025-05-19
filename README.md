@@ -82,14 +82,6 @@ This repo includes a `.cargo/config.toml` file with helpful aliases:
 - `cargo checks` — check build with no default features
 - `cargo builds` — build with all features enabled
 
-### 🧹 Spellchecking with `cspell`
-
-A `cspell.json` config is included in the repo to support
-[Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
-in editors like VS Code.
-
-It includes common technical terms used in the project (e.g. `vdchar`, `serde`, `rngs`) to avoid false positives.
-
 ## 📦 Crate Metadata
 
 - License: MIT OR Apache-2.0
