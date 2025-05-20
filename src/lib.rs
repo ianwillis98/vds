@@ -27,5 +27,4 @@ pub use vdchar::{VDChar, VDS_ALLOWED};
 pub use vdstring::{VDString, VDStringError};
 
 #[cfg(feature = "generate")]
-#[cfg_attr(docsrs, doc(cfg(feature = "generate")))]
 pub use generate::{VDGenerator, VDGeneratorError};
