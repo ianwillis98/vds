@@ -21,7 +21,6 @@ use serde::{Deserialize, Deserializer, Serialize, Serializer};
 /// ```json
 /// "X"
 /// ```
-#[cfg_attr(docsrs, doc(cfg(feature = "serde")))]
 impl Serialize for VDChar {
     fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
         serializer.serialize_char(self.as_char())
@@ -31,7 +30,6 @@ impl Serialize for VDChar {
 /// Deserializes a [`VDChar`] from a `char`.
 ///
 /// Returns an error if the character is not in the visibly distinguishable set.
-#[cfg_attr(docsrs, doc(cfg(feature = "serde")))]
 impl<'de> Deserialize<'de> for VDChar {
     fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
         let c = <char>::deserialize(deserializer)?;
@@ -40,7 +38,6 @@ impl<'de> Deserialize<'de> for VDChar {
 }
 
 /// Serializes a [`VDString`] as a `str`, e.g. `"ABC29"`.
-#[cfg_attr(docsrs, doc(cfg(feature = "serde")))]
 impl Serialize for VDString {
     fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
         serializer.serialize_str(self)
@@ -50,7 +47,6 @@ impl Serialize for VDString {
 /// Deserializes a [`VDString`] from a `str`.
 ///
 /// Returns an error if any character is not in the allowed set.
-#[cfg_attr(docsrs, doc(cfg(feature = "serde")))]
 impl<'de> Deserialize<'de> for VDString {
     fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
         let s = <&str>::deserialize(deserializer)?;
