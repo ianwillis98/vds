@@ -1,13 +1,13 @@
 #![cfg(feature = "serde")]
 
 use vds::{VDChar, VDString, VDS_ALLOWED};
-use proptest::prelude::*;
+use proptest::{prelude::*, sample::select};
 use serde_json;
 
 proptest! {
     #[test]
     fn vdchar_json_roundtrip(c in select(VDS_ALLOWED)) {
-        let vd = VDChar::new(*c).unwrap();
+        let vd = VDChar::new(c).unwrap();
         let json = serde_json::to_string(&vd).unwrap();
         let parsed: VDChar = serde_json::from_str(&json).unwrap();
         prop_assert_eq!(vd, parsed);
